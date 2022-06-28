@@ -4,8 +4,8 @@ defmodule YahooFinanceElixir.MixProject do
   def project do
     [
       app: :yahoo_finance_elixir,
-      version: "0.1.3",
-      elixir: "~> 1.6",
+      version: "0.1.4",
+      elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       source_url: "https://github.com/mtanca/YahooFinanceElixir",
@@ -27,9 +27,9 @@ defmodule YahooFinanceElixir.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:httpoison, "~> 1.0"},
-      {:poison, "~> 2.0"},
-      {:ex_doc, ">= 0.0.0", only: :dev}
+      {:httpoison, "~> 1.8.1"},
+      {:poison, "~> 5.0"},
+      {:ex_doc, ">= 0.28.4", only: :dev}
     ]
   end
 
