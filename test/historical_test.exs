@@ -18,16 +18,16 @@ defmodule YahooFinance.HistoricalTest do
   end
 
   test "history- returns :error for invalid symbol" do
-    results = YahooFinance.historical("AXAPL", "2018-05-28", "2018-05-29")
-    assert results == {:error, "Invalid symbol given as argument"}
+    results = YahooFinance.historical("AXAPL", "2022-05-28", "2022-05-29")
+    assert results == {:error, "Issue getting API - Invalid Request"}
   end
 
   test "history- returns :error if start date > end date" do
-    results = YahooFinance.historical("AAPL", "2018-05-30", "2018-05-01")
+    results = YahooFinance.historical("AAPL", "2022-05-30", "2022-05-01")
 
     assert results ==
              {:error,
-              "Invalid input - start date cannot be after end date. startDate = 1527674400, endDate = 1525168800"}
+              "Issue getting API - Invalid Request"}
   end
 
   test "history- throws :error if symbol is given as empty string" do

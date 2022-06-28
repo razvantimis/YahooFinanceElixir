@@ -3,7 +3,7 @@ defmodule YahooFinanceTest do
   doctest YahooFinance
 
   test "history- returns successful call with :ok" do
-    results = YahooFinance.historical("AAPL", "2018-05-28", "2018-05-29")
+    results = YahooFinance.historical("AAPL", "2021-06-28", "2022-06-28")
     assert elem(results, 0) == :ok
   end
 
@@ -28,7 +28,7 @@ defmodule YahooFinanceTest do
   end
 
   test "functions can recieve string-like args as charlist" do
-    {historical, _} = YahooFinance.historical('AAPL', '2018-05-28', '2018-05-29')
+    {historical, _} = YahooFinance.historical('AAPL', '2021-05-28', '2022-05-29')
     {snapshot, _} = YahooFinance.snapshot('AAPL', [:incomeStatementHistory])
     {f_quote, _} = YahooFinance.full_quote('AAPL')
     {s_quote, _} = YahooFinance.simple_quote('AAPL')
